@@ -1,0 +1,38 @@
+#%RAML 1.0
+title: s-m2i-devops
+
+types:
+  Account:
+    properties:
+      accountID: string
+      name: string
+
+/accounts:
+  get:
+    description: get all accounts
+    queryParameters:
+      accountID?: string
+      name?: string
+    responses:
+      200:
+        body:
+          application/json:
+            type: Account[]
+            example:
+              [
+                {"accountID": "AC123","name": "The first account"},
+                {"accountID": "AC456","name": "The second account"}
+              ]
+  /{id}:
+    get:
+      description: get a specific account
+      queryParameters:
+        accountID?: string
+        name?: string
+      responses:
+        200:
+          body:
+            application/json:
+              type: Account
+              example: 
+                { "accountID": "AC456", "name": "The second account" }
