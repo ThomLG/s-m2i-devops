@@ -14,7 +14,7 @@ pipeline {
         ANYPOINT_CREDENTIALS = credentials('totopondi56')
       }
       steps {
-        sh "mvn deploy -DmuleDeploy -Dworkers=1 -Dworker.type=Micro -Dcloud.env=${env.envName} -DcloudhubAppName=${env.cloudhubAppName} -Dmule.version=${env.muleVersion} -Dcloud.user=${ANYPOINT_CREDENTIALS_USR} -Dcloud.password=${ANYPOINT_CREDENTIALS_PSW}"
+        sh "mvn deploy -DmuleDeploy -Dmule.version=4.4.0  -Danypoint.username=${ANYPOINT_CREDENTIALS_USR} -Danypoint.password=${ANYPOINT_CREDENTIALS_PSW} -Denv=Sandbox -Dappname=s-m2i-devops -Dbusiness=Unemployed1"
       }
     }   
             }
