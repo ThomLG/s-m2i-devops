@@ -1,0 +1,6 @@
+{
+    "envparams" : {
+        "envName" : "dev",
+        "applicationName" : "accountsDev" 
+    } 
+}
