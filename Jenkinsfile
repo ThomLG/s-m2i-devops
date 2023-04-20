@@ -11,9 +11,11 @@ pipeline{
     stages{
 
         stage('configuration'){
+            steps{
             /*Lire le fichier json config.json en utilisant jsonRead*/
             conf = readJSON file: "env/${env.BRANCH_NAME}/config.json"
-            env = config.get("envparams") 
+            env = config.get("envparams")
+            } 
         }
         stage('Build Application')
         {
