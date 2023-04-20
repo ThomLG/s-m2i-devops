@@ -4,7 +4,7 @@ pipeline{
 
  pollSCM('H/2 * * * *')
 
- }
+    }
     stages{
         stage('Build Application')
         {
